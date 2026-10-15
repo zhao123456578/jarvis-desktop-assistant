@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Jarvis Pet</title>
+  <link rel="stylesheet" href="pet.css">
+</head>
+<body>
+  <section id="pet-chat" class="pet-chat interactive" aria-label="与 JARVIS 对话" hidden>
+    <header class="chat-head">
+      <div class="chat-identity"><span class="signal-dot"></span><strong>JARVIS</strong><span>对话</span></div>
+      <button id="chat-close" class="chat-close" type="button" title="关闭对话" aria-label="关闭对话">&times;</button>
+    </header>
+    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite"></div>
+    <form id="chat-form" class="chat-form">
+      <label class="sr-only" for="chat-input">消息</label>
+      <textarea id="chat-input" maxlength="2000" rows="1" placeholder="输入消息"></textarea>
+      <button id="chat-send" type="submit">发送</button>
+    </form>
+  </section>
+
+  <div id="bubble" class="speech-bubble interactive" role="status" hidden>
+    <div class="bubble-head"><span class="signal-dot"></span><strong>JARVIS</strong></div>
+    <p id="bubble-text"></p>
+    <button id="bubble-action" type="button" hidden>打开课程总结</button>
+  </div>
+
+  <div id="pet" class="pet interactive" data-scene="other" data-state="idle" aria-label="AI Jarvis 桌宠">
+    <div class="avatar-window">
+      <div class="character-aura" aria-hidden="true"></div>
+      <div class="character-rig">
+        <div class="assembly-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="armor-shards" aria-hidden="true"></div>
+        <img id="jarvis-character" class="helmet-character" src="../../assets/pet/jarvis-character-v2.png" alt="" draggable="false">
+        <div class="helmet-scan" aria-hidden="true"></div>
+        <div class="assembly-flash" aria-hidden="true"></div>
+      </div>
+    </div>
+    <canvas id="particle-field" aria-hidden="true"></canvas>
+    <button id="privacy-toggle" class="privacy-toggle" type="button"
+      title="双击暂停或恢复画面感知" aria-label="双击暂停或恢复画面感知"></button>
+  </div>
+  <script src="../pet-state.js"></script>
+  <script src="particle-map.js"></script>
+  <script src="pet.js"></script>
+</body>
+</html>

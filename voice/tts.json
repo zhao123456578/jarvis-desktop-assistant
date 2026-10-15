@@ -1,0 +1,6 @@
+{
+  "engine": "edge",
+  "voice": "zh-CN-YunyangNeural",
+  "rate": "-10%",
+  "pitch": "-6%"
+}

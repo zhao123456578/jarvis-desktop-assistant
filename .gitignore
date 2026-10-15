@@ -1,0 +1,72 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test and type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+node_modules/
+desktop/qa-output/
+*.egg-info/
+
+# Local AI Jarvis runtime data and secrets
+config/local.toml
+models/
+.runtime/
+/memory/
+/courses/
+*.gguf
+*.safetensors
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local tooling / temp files
+.sisyphus/
+.superpowers/
+*.log
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Screen analyzer session data & reports
+.screen-analyzer/
+
+others/
+
+.omo/
+.agents/
+.claude/
+.codegraph
+
+# ===== 本版（二次开发）新增：大体积依赖不随仓库分发 =====
+# 原生推理 vendored 的 llama.cpp，构建时由 start-real.ps1 拉取，约 155 MB
+third_party/runtime/vendor/
+# ffmpeg 单文件 169 MB，超过 GitHub 单文件 100 MB 上限
+voice/bin/ffmpeg.exe
+# whisper 听写模型，约 466 MB
+voice/model/
+# 运行产生的音频与日志
+voice/*.wav
+voice/*.mp3
+voice/reply.txt
