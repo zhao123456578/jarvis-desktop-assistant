@@ -7,6 +7,7 @@
 </div>
 
 <p align="center">
+  <a href="#english"><strong>English</strong></a> ·
   <a href="#这是什么">这是什么</a> ·
   <a href="#本版做了什么">本版做了什么</a> ·
   <a href="#快速开始">快速开始</a> ·
@@ -191,11 +192,35 @@ GPL-3.0 的传染性要求——**使用了它的代码，整个作品必须以 
 
 ## English
 
-A Windows desktop assistant forked from [LYiHub/pub-local-jarvis](https://github.com/LYiHub/pub-local-jarvis).
+**AI Jarvis — Desktop Assistant** is a Windows desktop assistant forked from
+[LYiHub/pub-local-jarvis](https://github.com/LYiHub/pub-local-jarvis).
 
-This fork adds: microphone capture mixed with system audio (the original only captured system playback),
-a `voice/` module that chains local whisper transcription → cloud LLM → Microsoft Edge neural TTS,
-and a Jarvis-style helmet assembly animation ported from
-[Big-Guan/jarvis-codex](https://github.com/Big-Guan/jarvis-codex).
+The original watches your screen and the audio your PC plays. This fork adds what was missing:
+
+- **It actually hears you.** The native capture layer was rewritten to mix system audio with *all*
+  available microphones — upstream only captured system playback, so talking to your mic did nothing.
+- **It answers out loud, quickly.** A new `voice/` module chains microphone → local whisper.cpp
+  transcription (~3 s) → cloud LLM answer (~1–2 s) → Microsoft Edge neural speech (~1 s).
+  Roughly 5–7 seconds from the moment you stop talking.
+- **Jarvis-style animation.** The desktop pet is a helmet that assembles itself: 992 particles
+  flying in from the window edges, 19 armor shards, scan lines, energy rings, a breathing glow.
+  Ported from [Big-Guan/jarvis-codex](https://github.com/Big-Guan/jarvis-codex).
+
+### Quick start (voice only)
+
+No Python, CUDA or Visual Studio needed — just the official AI Jarvis install and Node.js.
+
+```powershell
+git clone https://github.com/zhao123456578/jarvis-desktop-assistant
+cd jarvis-desktop-assistant/voice
+powershell -NoProfile -ExecutionPolicy Bypass -File .\安装依赖.ps1   # downloads ffmpeg + whisper model
+```
+
+Then launch `启动语音问答.bat` and simply talk. There is **no wake word** — say "hello" and it answers.
+
+> Most in-repo documentation is written in Chinese, the project's main audience. Some script
+> filenames are Chinese too: `安装依赖.ps1` = install dependencies, `启动语音问答.bat` = start the
+> voice loop, `重新打包界面.ps1` = repack the UI bundle (Node.js only, no build toolchain).
+> Issues and pull requests in English are welcome.
 
 **Licensed GPL-3.0**, because the ported visual layer is GPL-3.0. See [CREDITS.md](CREDITS.md).
