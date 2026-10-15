@@ -1,8 +1,9 @@
 <div align="center">
-  <img src="desktop/assets/pet/jarvis-character-v2.png" width="200" alt="AI Jarvis 桌宠形象">
-  <h1>AI Jarvis 增强版</h1>
-  <p><strong>叫一声就能听懂你说话、用神经语音回答的桌面助手</strong></p>
-  <p>Windows · 头盔组装动效 · 麦克风全双工 · 云端快速问答 · 音色可换</p>
+  <img src="desktop/assets/pet/jarvis-character-v2.png" width="200" alt="AI Jarvis desktop assistant">
+  <h1>AI Jarvis — Desktop Assistant</h1>
+  <p><strong>A Windows desktop assistant that hears what you say and answers out loud.</strong></p>
+  <p>能听懂你说话、用神经语音回答的桌面助手（Windows）</p>
+  <p>Windows · helmet assembly animation · microphone full-duplex · cloud-fast Q&amp;A · swappable voice</p>
 </div>
 
 <p align="center">
